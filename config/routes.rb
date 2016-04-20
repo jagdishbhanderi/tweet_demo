@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'home#index'
+
+  get '/auth/twitter/callback' => 'tweets#authorize_twitter'
+
+  post 'tweets/tweet' => 'tweets#tweet'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

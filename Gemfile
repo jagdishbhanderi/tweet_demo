@@ -47,4 +47,5 @@ group :development do
   gem 'spring'
 end
 
-gem ''
+gem 'omniauth-twitter'
+gem 'httpclient'

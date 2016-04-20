@@ -1,0 +1,19 @@
+<% if current_user %>
+    <%= image_tag current_user['image'] %>
+    Welcome <strong><%= current_user['name'] %></strong>
+
+<% else %>
+    <%= link_to 'twitter connect', '/auth/twitter' %>
+<% end %>
+
+
+<% if current_user %>
+
+    <p>
+      <%= form_tag(tweets_tweet_path, method: :post) do  %>
+          <%= text_area_tag :message %>
+          <%= submit_tag "Send Tweet" %>
+      <% end %>
+    </p>
+
+<% end %>
